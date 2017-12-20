@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search Flights</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<header>
+			<div class="header-container">
+				<h2> Flight Search Engine </h2>
+			</div>
+		</header>
+		<div class="main-container" ng-app="flightSearchApp">
+			<div class="flex-container" ng-controller="mainCtrl">
+				<div class="search-container">
+					<nav class="search-nav">
+						<ul>
+							<li ng-class="{'selected' : ftInput.roundTrip == false}">
+								<a href="javascript:void(0);" ng-click="ftInput.roundTrip = false;">One way</a>
+							</li>
+							<li ng-class="{'selected' : ftInput.roundTrip == true}">
+								<a href="javascript:void(0);" ng-click="ftInput.roundTrip = true;">Return</a>
+							</li>
+						</ul>
+					</nav>
+
+					<div id="search-form">
+						<form name="search-flights">
+							<div class="form-errors" ng-show="errors.length > 0">
+								<p ng-repeat="err in errors">{{err}}</p>
+							</div>
+
+							<label for="origin">From</label>
+							<select id="origin" name="origin" class="form-ctrl" ng-model="ftInput.origin"
+							ng-blur="validateDestination()" required>
+								<option ng-repeat="airport in airportCodes" value="{{airport.code}}">
+									{{airport.city}}
+								</option>
+							</select>
+
+							<label for="destination">To</label>
+							<select id="destination" name="destination" class="form-ctrl" 
+								ng-model="ftInput.destination" ng-blur="validateDestination()" required>
+								<option ng-repeat="airport in airportCodes" value="{{airport.code}}">
+									{{airport.city}}
+								</option>
+							</select>
+
+							<label for="departureDate">Depart On</label>
+							<input type="text" name="departDate" id="departDate" class="form-ctrl" 
+							ng-model="ftInput.departureDate">
+							<!-- <input type="date" id="departureDate" class="form-ctrl" ng-model="ftInput.departureDate" placeholder="Select Departure Date" required />
+							-->
+							<label ng-show="ftInput.roundTrip" for="returnDate">Return On</label>
+							<input type="text" name="returnDate" id="returnDate" class="form-ctrl" 
+							ng-model="ftInput.returnDate" ng-show="ftInput.roundTrip">
+							<!-- <input ng-show="ftInput.roundTrip == true" type="date" id="returnDate" class="form-ctrl" ng-model="ftInput.returnDate" placeholder="Select Return Date" />
+ 							-->
+							<label for="passengerCount">Passengers</label>
+							<select id="passengerCount" name="passengerCount" class="form-ctrl" ng-model="ftInput.passengersCnt" required>
+								<option ng-repeat="i in psCountList" value="{{i}}">{{ i }}</option>
+							</select>
+
+							<button class="form-btn" ng-click="searchFlights()">Search flights</button>
+						</form>
+					</div>
+
+					<div class="p_slider">
+						<p class="ft12">Refine flight search</p>
+						<p>
+							<span class="minCr sft">Min Price</span>							
+							<input type="range" name="cmin_price" ng-model="ftInput.minPrice"
+							min="1000" max="10000" step="1000">
+							<span class="min-price sft">[{{ftInput.minPrice | currency:'Rs.'}}]</span>
+						</p>
+						<p>
+							<span class="maxCr sft">Max Price</span>							
+							<input type="range" name="cmax_price" ng-model="ftInput.maxPrice"
+							min="1000" max="10000" step="1000">
+							<span class="min-price sft">[{{ftInput.maxPrice | currency:'Rs.'}}]</span>
+						</p>
+
+					</div>
+				</div>
+				<div class="results-container">
+					<div class="r-header">
+						<div class="path">
+							<p> {{ flightInfo }} </p>
+						</div>
+						<div class="j-dates">
+							<p class="depart" ng-show="ftInput.departureDate">
+								Depart : {{ ftInput.departureDate }}
+							</p>
+							<p class="return" ng-show="ftInput.roundTrip">
+								Return : {{ ftInput.returnDate }}
+							</p>
+						</div>
+					</div>
+					<div class="ft-tiles">
+						<ft-tile ng-repeat="ft in flights | applyPriceRange:ftInput" 
+							info="ft" book-action="bookFlight(ft)">
+						</ft-tile>
+					</div>
+
+					<div class="dp_msg" ng-hide="flights.length > 0">
+						Sorry, no flights found in this route or date. 
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="angular.js"></script>
+		<script src="main.js"></script>
+
+	</body>
+</html>

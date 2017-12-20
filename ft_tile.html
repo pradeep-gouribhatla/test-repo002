@@ -1,0 +1,55 @@
+<!-- Flight Info Tile  -->
+
+<div class="ft-tile grd">
+	<!-- Flight Schedule Information -->
+	<div class="ft-info ft11">
+		<p class="total-price">
+			<span ng-show="ft.round_trip" class="cr">{{ft.rt_price | currency:'Rs.' }} </span>
+			<span ng-hide="ft.round_trip" class="cr">{{ft.onward.price}}</span>
+		</p>
+		<div class="trips">
+			<div class="onward" ng-show="ft.onward">
+				<p class="flight-code">{{ft.onward.flight_code}}</p>
+				<p class="path"> 
+					{{ft.onward.source.dp_citycode}} 
+					<span class="gt-icn"> > </span>
+					{{ft.onward.destination.arr_citycode}}
+				</p>
+				<p class="depart">
+					<span class="tlable">Depart:</span>
+					<span class="time"> {{ft.onward.source.dp_time}} </span>
+				</p>
+				<p class="arrival">
+					<span class="tlable">Arrive:</span>
+					<span class="time"> {{ft.onward.destination.arr_time}}</span>
+				</p>
+			</div>
+			<div class="return" ng-show="ft.return">
+				<p class="flight-code">{{ft.return.flight_code}}</p>
+				<p class="path"> 
+					{{ft.return.source.dp_citycode}} 
+					<span class="gt-icn"> > </span>
+					{{ft.return.destination.arr_citycode}}
+				</p>
+				<p class="depart">
+					<span class="tlable">Depart:</span>
+					<span class="time"> {{ft.return.source.dp_time}} </span>
+				</p>
+				<p class="arrival">
+					<span class="tlable">Arrive:</span>
+					<span class="time"> {{ft.return.destination.arr_time}}</span>
+				</p>			
+			</div>
+		</div>
+	</div>
+	
+	<!-- Image and book Action -->
+	<div class="ft-act">
+		<div class="ft-img">
+			<img ng-src="{{ft.onward.logo_url}}"></img>
+		</div>
+		<div class="ft-action">
+			<button class="btn-book" book-action="bookThis(ft)">Book Now</button>
+		</div>
+	</div>
+</div>

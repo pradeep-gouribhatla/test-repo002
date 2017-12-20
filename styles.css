@@ -1,0 +1,134 @@
+p { margin: 10px 0px; }
+.tc { text-align: center; }
+.ft11 { font-size: 1.1em; }
+.ft12 { font-size: 1.2em; }
+.ft14 { font-size: 1.4em; }
+.sft { font-size: 0.75em; }
+.shown { display: inline !important; }
+.hidden { display: none !important; }
+
+html, body { 
+	font-family: sans-serif; height: 100%; margin: 0px;
+	background-color: #f5f8fa;
+	background-image: url(header.jpg);
+	color: white;
+}
+
+header {
+	width: 100%;
+	height : 50px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid white;
+}
+
+.header-container, .main-container { margin: auto; max-width: 964px; }
+.header-container h2 { margin: auto; padding-top: 10px; }
+
+.flex-container { display: flex; flex-flow: row; justify-content: center; }
+.flex-container > div { display: flex; flex-flow: column; flex: 2; align-items: stretch; }
+.flex-container .results-container { flex-grow: 4; border-left: 2px solid grey; }
+
+#search-form { display: flex; flex-flow: column; align-items: center; border: 2px solid lightgray;padding: 10px; margin-right: 10px; }
+#search-form > form { width: 100%; display: flex; flex-flow: column; }
+#search-form .form-ctrl { font-size: 1.1em; margin: 10px 0; }
+#search-form .form-btn {
+	padding: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #f34f4f;
+    color: #fff;
+}
+
+#search-form form input { padding: 5px; border-radius: 3px; border: 1px solid #999; }
+#search-form .form-errors p { font-size: 0.8em; color: red; }
+
+.search-nav ul { padding: 0; list-style-type: none; }
+.search-nav ul li {
+    float: left;
+	padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    border: 2px solid #fff;
+    border-bottom: none;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 7px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0 1px 7px rgba(0,0,0,0.24);
+}
+.search-nav ul li a { color: #fff; font-weight: 300; text-decoration: none; padding: 10px 10px 10px 0;}
+.search-nav ul li.selected { background-color: #fff; color: black; }
+.search-nav ul li.selected a { color: black; }
+
+.p_slider { border: 2px solid lightgray;padding: 10px; margin: 10px 10px 0 0; }
+
+.r-header {
+	display: flex;
+    padding: 5px 15px;
+    border-bottom: 2px solid grey;
+}
+.r-header .path { flex : 3 1 0; }
+.r-header .path p{ font-size: 1.5em; font-weight: 500; }
+.r-header .j-dates { flex : 1 1 0; margin-top: 10px;}
+.r-header .j-dates p { font-size: 0.75em; margin: 0px; }
+
+.ft-tiles { margin: 10px; }	
+.ft-tile { 
+	display: flex; 
+	flex-direction: row; 
+	color: black;
+	border-radius: 8px;
+    background: #fff;
+    margin-bottom: 15px;
+    transition: box-shadow 200ms cubic-bezier(.4, 0, .2, 1);
+    border: 1px solid rgba(0,0,0,0.125);
+}
+.ft-tile.grd:hover {
+    box-shadow: 0 1px 4px #fff;
+    -moz-box-shadow: 0 1px 4px #fff;
+    -webkit-box-shadow: 0 1px 4px #fff;
+}
+.ft-tile.grd {
+    background: #f7f7f7;
+    background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+}
+
+.ft-tile .ft-info .trips { display: flex; }
+.ft-tile .ft-info .onward { width: 50%; }
+.ft-tile .ft-info { flex : 3 1 0; padding: 10px;}
+.ft-tile .ft-info p { margin: 5px 0px; }
+.ft-tile .ft-info p.total-price { font-size: 1.4em; }
+.ft-tile .ft-info p.flight-code { font-size: 0.75em; }
+.ft-tile .ft-act { flex: 1 1 0; padding: 5px 10px;}
+.ft-tile .ft-info .onward { width: 50%; }
+.ft-tile .ft-info .return { width: 50%; }
+.ft-tile .ft-act .ft-img img { width: 100%; }
+
+.btn-book { 
+	font-size: 13px;
+	font-weight: bold;
+	padding: 6px 0px;
+	border: 1px solid #263238;
+	border-radius: 4px;
+	width: 100%;
+	color: #204d74;
+	border-color: #204d74;
+	cursor: pointer;
+	background-color: white;
+}
+
+.dp_msg { font-weight: 200; padding: 20px; }
+
+/* Medium screens */
+@media all and (max-width: 820px) {
+  .flex-container { flex-direction: column; }
+  .flex-container .results-container { border-left: none; }
+}
+
+/* Small screens */
+@media all and (max-width: 540px) {
+  .flex-container, .ft-tile, .ft-tile .ft-info .trips, .r-header  { flex-direction: column; }
+  .ft-tile .ft-act .ft-img img { display: none; }
+  .ft-tile .ft-info .onward { border-bottom: 2px dotted gray; }	
+}

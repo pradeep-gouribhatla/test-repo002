@@ -1,0 +1,16 @@
+{
+	"airports" : [
+		{
+			"code" : "DEL",
+			"city" : "New Delhi"
+		},
+		{
+			"code" : "HYD",
+			"city" : "Hyderabad"
+		},
+		{
+			"code" : "PNQ",
+			"city" : "Pune"
+		}
+	]
+}

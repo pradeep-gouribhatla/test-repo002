@@ -1,0 +1,168 @@
+{
+  "flights": [
+    {
+      "id": "9822314",
+      "flight_code": "JA-202",
+      "code" : "PNQ-DEL",
+      "company": "Vistara",
+      "logo_url" : "https://goibibo.ibcdn.com/images/v2/carrierImages/UK.gif",
+      "price": 2500,
+      "class": "Economy",
+      "available_seats": 5,
+      "date": "05/15/2017",
+      "source": {
+          "dp_date": "05/15/2017",
+          "dp_time": "02:05 PM IST",
+          "dp_city": "Pune",
+          "dp_citycode": "PNQ"
+      },
+      "destination": {
+          "arr_date": "05/15/2017",
+          "arr_time": "03:05 PM IST",
+          "arr_city": "Delhi",
+          "arr_citycode": "DEL"
+      }
+    },
+    {
+      "id": "9822315",
+      "flight_code" : "JA-203",
+      "code" : "DEL-PNQ",
+      "company" : "Vistara",
+      "logo_url" : "https://goibibo.ibcdn.com/images/v2/carrierImages/UK.gif",
+      "price": 2500,
+      "class": "Economy",
+      "available_seats": 15,
+      "date": "05/18/2017",
+      "source": {
+          "dp_date": "05/18/2017",
+          "dp_time": "07:05 PM IST",
+          "dp_city": "Delhi",
+          "dp_citycode": "DEL"
+      },
+      "destination": {
+          "arr_date": "05/18/2017",
+          "arr_time": "08:15 PM IST",
+          "arr_city": "Pune",
+          "arr_citycode": "PNQ"
+      }
+    },
+    {
+      "id": "9822316",
+      "flight_code": "AI-007",
+      "code" : "HYD-DEL",
+      "company": "Air Inida",
+      "logo_url" : "https://goibibo.ibcdn.com/images/v2/carrierImages/AI.gif",
+      "price": "5300",
+      "class": "Economy",
+      "available_seats": 11,
+      "date": "05/15/2017",
+			"source": {
+			  "dp_date": "05/15/2017",
+			  "dp_time": "04:30 PM IST",
+			  "dp_city": "Hyderabad",
+			  "dp_citycode": "HYD"
+			},
+			"destination": {
+			  "arr_date": "05/15/2017",
+			  "arr_time": "06:10 PM IST",
+			  "arr_city": "Delhi",
+			  "arr_citycode": "DEL"
+			}
+    },
+
+    {
+      "id": "9822314",
+      "flight_code": "AI-202",
+      "code" : "PNQ-DEL",
+      "company": "Air Inida",
+      "logo_url" : "https://goibibo.ibcdn.com/images/v2/carrierImages/AI.gif",
+      "price": 5400,
+      "class": "Economy",
+      "available_seats": 11,
+      "date": "05/15/2017",
+      "source": {
+          "dp_date": "05/15/2017",
+          "dp_time": "06:27 PM IST",
+          "dp_city": "Pune",
+          "dp_citycode": "PNQ"
+      },
+      "destination": {
+          "arr_date": "05/15/2017",
+          "arr_time": "07:45 PM IST",
+          "arr_city": "Delhi",
+          "arr_citycode": "DEL"
+      }
+    },
+    {
+      "id": "9822315",
+      "flight_code" : "AI-203",
+      "code" : "DEL-PNQ",
+      "company" : "Air India",
+      "logo_url" : "https://goibibo.ibcdn.com/images/v2/carrierImages/AI.gif",
+      "price": 2500,
+      "class": "Economy",
+      "available_seats": 15,
+      "date": "05/18/2017",
+      "source": {
+          "dp_date": "05/18/2017",
+          "dp_time": "05:40 AM IST ",
+          "dp_city": "Delhi",
+          "dp_citycode": "DEL"
+      },
+      "destination": {
+          "arr_date": "05/18/2017",
+          "arr_time": "07:06 AM IST ",
+          "arr_city": "Pune",
+          "arr_citycode": "PNQ"
+      }
+    },
+    {
+      "id": "9822316",
+      "flight_code": "AI-007",
+      "code" : "HYD-DEL",
+      "company": "Air Inida",
+      "logo_url" : "https://goibibo.ibcdn.com/images/v2/carrierImages/AI.gif",
+      "price": 4800,
+      "class": "Economy",
+      "available_seats": 11,
+      "date": "05/18/2017",
+			"source": {
+			  "dp_date": "05/15/2017",
+			  "dp_time": "02:05 PM IST ",
+			  "dp_city": "Hyderabad",
+			  "dp_citycode": "HYD"
+			},
+			"destination": {
+			  "arr_date": "05/15/2017",
+			  "arr_time": "04:15 PM IST ",
+			  "arr_city": "Delhi",
+			  "arr_citycode": "DEL"
+			}
+    },
+    {
+      "id": "9822317",
+      "flight_code": "AI-008",
+      "code" : "DEL-HYD",
+      "company": "Air Inida",
+      "logo_url" : "https://goibibo.ibcdn.com/images/v2/carrierImages/AI.gif",
+      "price": 4800,
+      "class": "Economy",
+      "available_seats": 11,
+      "date": "05/18/2017",
+	    "source": {
+        "dp_date": "05/18/2017",
+        "dp_time": "06:45 PM IST ",
+        "dp_city": "Delhi",
+        "dp_citycode": "Del"
+      },
+      "destination": {
+        "arr_date": "05/18/2017",
+        "arr_time": "09:01 PM IST ",
+        "arr_city": "Hyderabad",
+        "arr_citycode": "HYD"
+      }
+      }
+  ]
+}
+
+
